@@ -12,8 +12,12 @@ describe 'advanced-help', ->
 
     require('../src/advanced-help')(@robot)
 
-  it 'registers a respond listener', ->
-    expect(@robot.respond).to.have.been.calledWith(/hello/)
+  it 'responds to hubot help', ->
+    expect(@robot.respond).to.have.been.calledWith(/help/)
 
-  it 'registers a hear listener', ->
-    expect(@robot.hear).to.have.been.calledWith(/orly/)
+  it 'responds to hubot e.g.', ->
+    expect(@robot.respond).to.have.been.calledWith(/e.g./)
+
+  it 'responds to hubot tags', ->
+    expect(@robot.respond).to.have.been.calledWith(/tags/)
+

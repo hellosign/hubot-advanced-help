@@ -1,7 +1,7 @@
 {
   "name": "hubot-advanced-help",
   "description": "A hubot help replacement that supports #hashtags",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "author": "Nour Sharabash <nour@hellosign.com>",
   "license": "MIT",
 
@@ -9,11 +9,11 @@
 
   "repository": {
     "type": "git",
-    "url": "git://github.com/hubot-scripts/hubot-advanced-help.git"
+    "url": "git://github.com/HelloFax/hubot-advanced-help.git"
   },
 
   "bugs": {
-    "url": "https://github.com/hubot-scripts/hubot-advanced-help/issues"
+    "url": "https://github.com/HelloFax/hubot-advanced-help/issues"
   },
 
   "dependencies": {
