@@ -1,7 +1,7 @@
 {
   "name": "hubot-advanced-help",
   "description": "A hubot help replacement that supports #hashtags",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "author": "Nour Sharabash <nour@hellosign.com>",
   "license": "MIT",
 

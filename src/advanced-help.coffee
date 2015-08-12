@@ -26,6 +26,21 @@
 #   None of the environment variables necessarily need to be set, this script
 #   has reasonable defaults set by... default.
 #
+#   Both commands and examples are split once on ' - '. The right side of the split
+#   is split again multiple times on semi-colon delimiters. Thus, documentation that
+#   looks like:
+#
+#      deploy <env> <node> - deploy qa web; deploy staging web; deploy prod api
+#
+#   ends up getting output as:
+#
+#      deploy <env> <node>
+#              deploy qa web
+#              deploy staging web
+#              deploy prod api
+#
+#   This is to facilitate multiple explanations or examples per command/example definition.
+#
 # Configuration:
 #   HUBOT_ADVANCED_HELP_LOGIC='OR|AND' -- defaults to "AND"
 #   HUBOT_ADVANCED_HELP_SCRIPTS_PATH='/opt/hubot/scripts:/opt/hubot/scripts-available:/etc:/etc'
@@ -290,7 +305,21 @@ module.exports = ( robot ) ->
     init_help()
     results = get_results( search_string, result_type ).map( ( result ) ->
       return result.replace /hubot/i, robot.name
-    ).sort()
+    ).sort().map( ( result ) ->
+      split_result = result.split( ' - ' )
+      command = split_result.shift().trim()
+      if split_result.length == 0
+        return [ command, '' ]
+      else
+        returned = [ command ]
+        explanations = split_result.join( ' - ' ).trim().split( /\s*;\s*/ )
+        for explanation in explanations
+          returned.push "        #{explanation}"
+        returned.push ''
+        return returned
+    ).reduce( ( a, b ) ->
+      return a.concat b
+    )
 
     if not search_string
       results = results.concat( [
