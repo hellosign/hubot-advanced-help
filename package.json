@@ -1,28 +1,26 @@
 {
   "name": "hubot-advanced-help",
   "description": "A hubot help replacement that supports #hashtags",
-  "version": "0.0.7",
-  "author": "Nour Sharabash <nour@hellosign.com>",
+  "version": "0.1.0",
+  "author": "HelloSign",
   "license": "MIT",
-
-  "keywords": "hubot, hubot-scripts, help",
-
+  "type": "commonjs",
+  "keywords": [
+    "hubot",
+    "hubot-scripts",
+    "help"
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/HelloFax/hubot-advanced-help.git"
   },
-
   "bugs": {
     "url": "https://github.com/HelloFax/hubot-advanced-help/issues"
   },
-
-  "dependencies": {
-  },
-
+  "dependencies": {},
   "peerDependencies": {
     "hubot": "2.x"
   },
-
   "devDependencies": {
     "chai": "^2.1.1",
     "coffee-script": "1.6.3",
@@ -37,9 +35,7 @@
     "sinon": "^1.13.0",
     "sinon-chai": "^2.7.0"
   },
-
   "main": "index.coffee",
-
   "scripts": {
     "test": "grunt test"
   }
