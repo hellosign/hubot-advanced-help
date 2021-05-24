@@ -18,6 +18,18 @@ Then add **hubot-advanced-help** to your `external-scripts.json`:
 ]
 ```
 
+## Configuration
+
+No further configuration besides `external-scripts.json` is required in order to get hubot-advanced-help to work.
+However, you can optionally disable this script with the environment variable `HUBOT_ADVANCED_HELP_DISABLE`:
+
+```shell
+HUBOT_ADVANCED_HELP_DISABLE="true" bin/hubot
+```
+
+This is helpful if you want to dynamically control usage of hubot-advanced-help.
+Remember that you still need to use `external-scripts.json` regardless of whether the env variable is used.
+
 ## Sample Interaction
 
 ```
